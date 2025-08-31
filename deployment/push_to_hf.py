@@ -1,11 +1,14 @@
 import os
 from huggingface_hub import HfApi, create_repo, upload_file
 from huggingface_hub.utils import RepositoryNotFoundError
+from dotenv import load_dotenv
 
 # Hugging Face repo details
 repo_id = "Vaddiritz/Tourism-Package-Prediction-rithika"
 repo_type = "space"
 
+load_dotenv()
+hf_token = os.getenv('HF_TOKEN')
 api = HfApi()
 
 # Check if repo exists, else create it
@@ -18,9 +21,12 @@ except RepositoryNotFoundError:
     print(f" Repo '{repo_id}' created.")
 
 # Upload deployment files
-files_to_upload = ["/content/drive/MyDrive/Colab_Notebooks/MLOps_TourismPackagePred/deployment/Dockerfile",
-                   "/content/drive/MyDrive/Colab_Notebooks/MLOps_TourismPackagePred/deployment/app.py",
-                   "/content/drive/MyDrive/Colab_Notebooks/MLOps_TourismPackagePred/deployment/requirements.txt"]
+base_path = os.getcwd()
+files_to_upload = [
+    os.path.join(base_path, "Dockerfile"),
+    os.path.join(base_path, "app.py"),
+    os.path.join(base_path, "requirements.txt")
+]
 
 for file in files_to_upload:
     upload_file(
