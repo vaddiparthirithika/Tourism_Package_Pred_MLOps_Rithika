@@ -23,8 +23,8 @@ except RepositoryNotFoundError:
 # Upload deployment files
 base_path = os.getcwd()
 files_to_upload = [
-    os.path.join(base_path, "Dockerfile"),
-    os.path.join(base_path, "app.py"),
+    os.path.join(base_path, "deployment", "Dockerfile"),
+    os.path.join(base_path, "deployment", "app.py"),
     os.path.join(base_path, "requirements.txt")
 ]
 
