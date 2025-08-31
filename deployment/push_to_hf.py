@@ -1,10 +1,11 @@
+
 import os
 from huggingface_hub import HfApi, create_repo, upload_file
 from huggingface_hub.utils import RepositoryNotFoundError
 from dotenv import load_dotenv
 
 # Hugging Face repo details
-repo_id = "Vaddiritz/Tourism-Package-Prediction-rithika"
+repo_id = "Vaddiritz/Tourism-Package-Prediction-rithika_new"
 repo_type = "space"
 
 load_dotenv()
@@ -17,7 +18,7 @@ try:
     print(f" Repo '{repo_id}' already exists.")
 except RepositoryNotFoundError:
     print(f" Creating new Space '{repo_id}'...")
-    create_repo(repo_id=repo_id, repo_type=repo_type, space_sdk="streamlit")
+    create_repo(repo_id=repo_id, repo_type=repo_type,private=False, space_sdk="docker")
     print(f" Repo '{repo_id}' created.")
 
 # Upload deployment files

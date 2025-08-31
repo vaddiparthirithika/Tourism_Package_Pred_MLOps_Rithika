@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 import os
 
 # Repo Information
-repo_id = "Vaddiritz/Tourism-Package-Prediction-rithika"
+repo_id = "Vaddiritz/Tourism-Package-Prediction-rithika_new"
 repo_type = "dataset"
 
 # Hugging Face Token
