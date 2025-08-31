@@ -2,6 +2,7 @@
 from huggingface_hub.utils import RepositoryNotFoundError
 from huggingface_hub import HfApi, create_repo
 from dotenv import load_dotenv
+import os
 
 # Repo Information
 repo_id = "Vaddiritz/Tourism-Package-Prediction-rithika"

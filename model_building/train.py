@@ -16,6 +16,7 @@ from huggingface_hub import HfApi, create_repo
 from huggingface_hub.utils import RepositoryNotFoundError
 import mlflow
 from dotenv import load_dotenv
+import os
 
 # MLflow tracking
 mlflow.set_tracking_uri("http://localhost:5000")
