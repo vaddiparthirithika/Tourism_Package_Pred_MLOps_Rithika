@@ -9,14 +9,13 @@ from sklearn.preprocessing import LabelEncoder
 # for hugging face hub API
 from huggingface_hub import HfApi, create_repo
 from huggingface_hub.utils import RepositoryNotFoundError
-from google.colab import userdata
 from huggingface_hub import hf_hub_download
-
-
-# Load dataset from Hugging Face
+from dotenv import load_dotenv
 
 # Load Hugging Face Token
-os.environ["HF_TOKEN"] = userdata.get("HF_token")
+#os.environ["HF_TOKEN"] = userdata.get("HF_token")
+load_dotenv()
+hf_token = os.getenv('HF_TOKEN')
 api = HfApi()
 
 # Download dataset file from HF repo

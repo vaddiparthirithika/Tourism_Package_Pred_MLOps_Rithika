@@ -15,11 +15,14 @@ import joblib
 from huggingface_hub import HfApi, create_repo
 from huggingface_hub.utils import RepositoryNotFoundError
 import mlflow
+from dotenv import load_dotenv
 
 # MLflow tracking
 mlflow.set_tracking_uri("http://localhost:5000")
 mlflow.set_experiment("Tourism_Package_Experiment")
 
+load_dotenv()
+hf_token = os.getenv('HF_TOKEN')
 api = HfApi()
 
 # Dataset paths from Hugging Face
